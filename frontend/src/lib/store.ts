@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { rootReducer } from './features'
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: rootReducer,
   })
 }
 
