@@ -17,7 +17,7 @@ export const wordleSlice = createSlice({
   initialState,
   reducers: {
     newGame: (state) => {
-      state.targetWord = "Shorts";
+      state.targetWord = "short";
       state.inputWords = new Array(6).fill("");
       state.currentIndex = 0;
     },
