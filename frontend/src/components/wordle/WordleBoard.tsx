@@ -15,6 +15,7 @@ import {
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import WordleRow from "./WordleRow";
+import { toast } from "react-toastify";
 
 export default function WordleBoard() {
   const dispatch = useDispatch();
@@ -32,13 +33,13 @@ export default function WordleBoard() {
       if (event.key === "Enter") {
         const currentWord = inputWords[currentIndex];
 
-        if(currentWord.length < 5) {
-          
+        if (currentWord.length < 5) {
+          toast.error("Word's too short") // Word too short
         } else {
           dispatch(submitWord()); // Submit current word
         }
       } else if (event.key === "Backspace") {
-        dispatch(deleteLetter()); // Delete a letter 
+        dispatch(deleteLetter()); // Delete a letter
       } else {
         dispatch(insertLetter(event.key)); // Insert a letter
       }
